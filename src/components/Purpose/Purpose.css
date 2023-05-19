@@ -1,0 +1,8 @@
+.container-info {
+    background-color: var(--color-fourth);
+    width: 90%;
+    height: 90%;
+    padding: 2rem;
+    border-radius: 20px;
+    opacity: 0.95;
+}

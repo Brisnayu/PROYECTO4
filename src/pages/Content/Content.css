@@ -1,0 +1,70 @@
+.input-nasa {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.input-nasa-date, .input-nasa-api {
+    display: flex;
+    gap: 1rem;
+    background-color: var(--color-first);
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: var(--color-fourth);
+}
+
+.info-nasa {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 90%;
+}
+
+.text-nasa {
+  padding: 0 1rem;
+  width: 70%;
+  height: auto;
+}
+
+.img-nasa {
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.img-nasa > img {
+  width: 90%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+select {
+    /* background-color: var(--color-third); */
+    border-radius: 5px;
+    padding: 0 10px;
+    color: var(--color-first);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .info-nasa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

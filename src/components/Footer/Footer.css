@@ -1,0 +1,33 @@
+footer {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.icon-rrss {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+footer p {
+    color: var(--color-fourth);
+}
+
+footer img {
+  /* border: 2px solid red; */
+  height: 5vh;
+  padding: 5px;
+  background-color: #1b6aa7;
+  border-radius: 10px;
+}
+
+footer img:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
