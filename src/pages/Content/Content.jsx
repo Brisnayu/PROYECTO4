@@ -1,6 +1,6 @@
 import "./Content.css";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import ChangeDate from "../../components/ChangeDate/ChangeDate";
 import SelectApi from "../../components/SelectApi/SelectApi";
@@ -32,13 +32,10 @@ const Content = () => {
   const [infoMars, setInfoMars] = useState([]);
 
   const NASA_URL = "https://api.nasa.gov/";
-  
 
-  let URL_API;
+
   const APOD_URL = `${NASA_URL}planetary/apod?date=${date}&api_key=${NASA_API_KEY}`;
   const MARS_URL = `${NASA_URL}mars-photos/api/v1/rovers/curiosity/photos?api_key=${NASA_API_KEY}&earth_date=${date}`;
-
-  // console.log(today[9] - 1)
 
   useEffect(() => {
     if (selectApi === "API-APOD") {
@@ -72,7 +69,7 @@ const Content = () => {
           <div className="input-nasa-date">
             <label>
               <h3>Consulta otra fecha</h3>
-              </label>
+            </label>
             <ChangeDate
               date={date}
               today={today}

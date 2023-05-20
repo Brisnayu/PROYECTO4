@@ -1,7 +1,9 @@
 import "./MarsRover.css";
-import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const MarsRover = ({ infoMars, selectButton, setSelectButton }) => {
+
+  uuidv4();
 
   const buttonCamera = [];
   const dateRover = [];
@@ -36,14 +38,14 @@ const MarsRover = ({ infoMars, selectButton, setSelectButton }) => {
         <div className="img-mars">
           {selectButton === "All"
             ? infoMars.map((item, index) => (
-                <div key={index + "item"}>
+                <div key={uuidv4()}>
                   <img src={item.img_src} alt={item.camera.full_name} />
                 </div>
               ))
             : infoMars
                 .filter((item) => item.camera.name === selectButton)
                 .map((photosFilter) => (
-                  <div>
+                  <div key={uuidv4()}>
                     <img
                       src={photosFilter.img_src}
                       alt={photosFilter.camera.full_name}
@@ -55,7 +57,7 @@ const MarsRover = ({ infoMars, selectButton, setSelectButton }) => {
           <h2>Mars Rover Photos: Curiosity</h2>
           <div>
             {infoMars
-              ? dateRover.map((dates, index) => <h4>{dates}</h4>)
+              ? dateRover.map((dates, index) => <h4 key={uuidv4()}>{dates}</h4>)
               : null}
           </div>
 
@@ -64,7 +66,7 @@ const MarsRover = ({ infoMars, selectButton, setSelectButton }) => {
           <div className="container-button">
             {infoMars
               ? buttonCamera.map((button) => (
-                  <button onClick={(event) => setSelectButton(button)}>
+                  <button key={uuidv4()} onClick={(event) => setSelectButton(button)}>
                     {button}
                   </button>
                 ))

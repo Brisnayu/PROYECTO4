@@ -17,3 +17,16 @@
     box-shadow: -7px 15px 15px rgba(66,66,66,.62);
     text-shadow: 4px 2px 4px rgba(66,66,66,.65);
 }
+
+@media screen and (max-width: 1170px) {
+    .container {
+        height: 100vh;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container > input {
+        font-size: 100%;
+    }
+}

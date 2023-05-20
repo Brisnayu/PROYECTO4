@@ -1,15 +1,11 @@
 .container-mars {
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
 }
 
-.container-mars h2 {
-  font-size: 2.2rem;
-}
-
 .container-mars h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-top: 1rem;
   text-align: center;
 }
@@ -30,8 +26,8 @@
 }
 
 .img-mars img {
-  width: 350px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -57,7 +53,7 @@
   margin-top: 1rem;
   gap: 1rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .container-button > button,
@@ -87,3 +83,33 @@
     background-color: var(--color-second);
     color: var(--color-fourth);
 } */
+
+@media screen and (max-width:560px) {
+  .container-button {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+
+  .container-mars {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .text-mars {
+    width: 90%;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .show-all {
+    width: 50%;
+  }
+
+  .img-mars {
+    height: 500px;
+    width: 85%;
+  }
+}

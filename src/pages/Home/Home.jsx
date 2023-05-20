@@ -19,7 +19,7 @@ const Home = () => {
             type="text"
             onInput={(event) => setInputValue(event.target.value)}
           />
-          <button onClick={() => setUser(inputValue)}>Login</button>
+          <button onClick={() => setUser(inputValue)}>🛰️ Iniciar 👨🏼‍🚀</button>
         </div>
       )}
     </main>

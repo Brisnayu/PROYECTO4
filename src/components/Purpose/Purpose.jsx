@@ -1,16 +1,19 @@
 import "./Purpose.css";
 import { textData } from "../../textData/TextData";
+import { v4 as uuidv4 } from "uuid";
 
 const Purpose = () => {
+  uuidv4();
+
   return (
-    <div className="container-info">
+    <div className="container-home">
       <h2>{textData.title}</h2>
       <p>{textData.context}</p>
       <br />
       <ul>
         <h3>Objetivos</h3>
         {textData.points.map((point, index) => (
-          <li key={index + "point"}>{point}</li>
+          <li key={uuidv4()}>{point}</li>
         ))}
       </ul>
       <br />

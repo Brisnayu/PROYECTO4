@@ -4,6 +4,7 @@ header {
     padding: 0 2rem;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     backdrop-filter: blur(10px);
 }
 
@@ -41,3 +42,14 @@ header button {
     color: var(--color-fourth);
 }
 
+@media screen and (max-width: 768px) {
+    header {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    header {
+        height: auto;
+    }
+}
