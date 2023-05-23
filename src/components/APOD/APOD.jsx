@@ -21,8 +21,8 @@ const APOD = ({ date, infoDay }) => {
         </div>
 
         <div className="img-nasa">
-          <h3>Imagen Atronómica del día</h3>
-          <img src={infoDay.hdurl} alt={infoDay.title} />
+          <h3>Imagen Astronómica del día</h3>
+          <img src={infoDay.hdurl} alt={infoDay.title} loading="lazy"/>
         </div>
       </section>
     </>

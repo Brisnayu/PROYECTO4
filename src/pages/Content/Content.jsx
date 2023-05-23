@@ -7,32 +7,20 @@ import SelectApi from "../../components/SelectApi/SelectApi";
 import APOD from "../../components/APOD/APOD";
 import MarsRover from "../../components/MarsRover/MarsRover";
 
+import { dateMars, yesterday } from "../../textData/DateFetchApi";
+import { NASA_URL, NASA_API_KEY } from "../../textData/NasaData";
+
 const Content = () => {
   const today = new Date(Date.now()).toISOString().slice(0, 10);
-
-  let ayer;
-
-  let prueba = new Date();
-  let day = prueba.getDate() - 1;
-  let month = prueba.getMonth() + 1;
-  let year = prueba.getFullYear();
-
-  if (month < 10) {
-    ayer = `${year}-0${month}-${day}`;
-  } else {
-    ayer = `${year}-${month}-${day}`;
-  }
+  dateMars();
 
   const [date, setDate] = useState(today);
   const [selectApi, setSelectApi] = useState("API-APOD");
 
-  const [selectButton, setSelectButton] = useState("All");
-
   const [infoDay, setInfoDay] = useState([]);
   const [infoMars, setInfoMars] = useState([]);
 
-  const NASA_URL = "https://api.nasa.gov/";
-
+  const [selectButton, setSelectButton] = useState("All");
 
   const APOD_URL = `${NASA_URL}planetary/apod?date=${date}&api_key=${NASA_API_KEY}`;
   const MARS_URL = `${NASA_URL}mars-photos/api/v1/rovers/curiosity/photos?api_key=${NASA_API_KEY}&earth_date=${date}`;
@@ -46,7 +34,7 @@ const Content = () => {
           // console.log(res);
           // console.log("el dia es", date);
         })
-        .catch((err) => {
+        .catch((error) => {
           alert("NO HAY INFORMACIÓN DE ESE DÍA");
         });
     } else {
@@ -56,7 +44,7 @@ const Content = () => {
           console.log("aquí estoy dentro del fetch", res.photos);
           setInfoMars(res.photos);
         })
-        .catch(() => {
+        .catch((error) => {
           alert("NO HAY INFORMACIÓN DE ESE DÍA");
         });
     }
@@ -66,35 +54,18 @@ const Content = () => {
     <main>
       <article className="container-info">
         <section className="input-nasa">
-          <div className="input-nasa-date">
-            <label>
-              <h3>Consulta otra fecha</h3>
-            </label>
             <ChangeDate
               date={date}
               today={today}
               setDate={setDate}
               setSelectButton={setSelectButton}
             />
-          </div>
-          <div className="input-nasa-api">
-            <label>
-              <h3>APOD / MARS ROVER</h3>
-            </label>
-            <select
-              name=""
-              id="changeApi"
-              onChange={(event) => {
-                setSelectApi(event.target.value);
-                event.target.value === "API-APOD"
-                  ? setDate(today)
-                  : setDate(ayer);
-              }}
-            >
-              <option value="API-APOD">API APOD</option>
-              <option value="API-mars-rovers">API Mars Rovers</option>
-            </select>
-          </div>
+            <SelectApi
+              setSelectApi={setSelectApi}
+              setDate={setDate}
+              today={today}
+              yesterday={yesterday}
+            />
         </section>
 
         {selectApi === "API-APOD" ? (
@@ -104,6 +75,7 @@ const Content = () => {
             infoMars={infoMars}
             selectButton={selectButton}
             setSelectButton={setSelectButton}
+            date={date}
           />
         )}
       </article>

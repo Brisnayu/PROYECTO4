@@ -1,0 +1,24 @@
+.container-button {
+  margin-top: 1rem;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container-button > button {
+  color: var(--color-fourth);
+  background-color: #1b6aa7;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.container-button > button:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+@media screen and (max-width: 560px) {
+  .container-button {
+    display: flex;
+    flex-direction: column;
+  }
+}
