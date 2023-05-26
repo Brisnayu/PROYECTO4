@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <header>
-      <img className="logo" src={logoNasa} alt="logo-nasa" />
+      <a href="https://api.nasa.gov/" target="_blank"><img className="logo" src={logoNasa} alt="logo-nasa" /></a>
 
       {user !== null && <h1>Welcome {user.charAt(0).toUpperCase() + user.slice(1)}</h1>}
 
