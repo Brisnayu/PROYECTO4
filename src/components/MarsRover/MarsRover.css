@@ -1,3 +1,8 @@
+.info-mars {
+  width: 100%;
+  height: 100%;
+}
+
 .container-mars {
   width: 100%;
   height: 90%;
@@ -12,6 +17,31 @@
 
 .container-mars h4 {
   font-weight: 500;
+}
+
+.container-spinner {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-spinner h5 {
+  color: var(--color-fifth);
+  font-weight: 400;
+  font-size: 0.9rem;
+  animation: appear 1s linear;
+}
+
+@keyframes appear {
+  0% {
+    scale: -1.1;
+  }
+  100% {
+    scale: 1.1;
+  }
 }
 
 .text-mars {

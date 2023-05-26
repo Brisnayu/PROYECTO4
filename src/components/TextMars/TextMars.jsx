@@ -6,7 +6,7 @@ uuidv4();
 
   return (
     <div>
-      <h4>Fotos correspondientes al día: {date}</h4>
+      <h4>Photos corresponding to the day: {date}</h4>
       {infoMars
         ? dateRover.map((dates) => <h4 key={uuidv4()}>{dates}</h4>)
         : null}

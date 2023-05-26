@@ -17,8 +17,11 @@ label {
   background-color: var(--color-first);
   padding: 10px 30px;
   border-radius: 10px;
-  color: var(--color-fourth);
   font-size: 0.9rem;
+}
+
+.input-nasa-date h3 {
+  color: var(--color-fourth);
 }
 
 @media screen and (max-width: 540px) {

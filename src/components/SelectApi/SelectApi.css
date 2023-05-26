@@ -4,8 +4,12 @@
   background-color: var(--color-first);
   padding: 10px 30px;
   border-radius: 10px;
-  color: var(--color-fourth);
+
   font-size: 0.9rem;
+}
+
+.input-nasa-api h3 {
+  color: var(--color-fourth);
 }
 
 select {
@@ -17,7 +21,7 @@ select {
   text-align: center;
 }
 
-@media screen and (min-width: 540px) {
+@media screen and (max-width: 540px) {
   .input-nasa-api {
     flex-direction: column;
   }

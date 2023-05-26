@@ -1,17 +1,22 @@
 import "./MarsRover.css";
 import { useEffect } from "react";
 
-import ImagesMars from "../../components/ImagesMars/ImagesMars";
-import TextMars from "../../components/TextMars/TextMars";
-
 import {
   createButton,
   buttonCamera,
   dateRover,
-} from "../../textData/CreateButton";
-import ButtonMarsRover from "../../components/ButtonMarsRover/ButtonMarsRover";
+} from "../../infoExtra/CreateButton";
 
-const MarsRover = ({ infoMars, selectButton, setSelectButton, date }) => {
+import DetailMarsRover from "../DetailMarsRover/DetailMarsRover";
+import Spinner from "../Spinner/Spinner";
+
+const MarsRover = ({
+  infoMars,
+  selectButton,
+  setSelectButton,
+  date,
+  showspinner,
+}) => {
   createButton(infoMars);
 
   useEffect(() => {
@@ -19,32 +24,29 @@ const MarsRover = ({ infoMars, selectButton, setSelectButton, date }) => {
   }, [infoMars]);
 
   return (
-    <>
-      <section className="container-mars">
-        <ImagesMars selectButton={selectButton} infoMars={infoMars} />
-
-        <div className="text-mars">
-          <h2>Mars Rover Photos: Curiosity</h2>
-
-          <TextMars date={date} dateRover={dateRover} infoMars={infoMars} />
-
-          <h3>Selecciona una cámara</h3>
-
-          <ButtonMarsRover
-            infoMars={infoMars}
-            setSelectButton={setSelectButton}
-            buttonCamera={buttonCamera}
-          />
-
-          <button
-            className="show-all"
-            onClick={() => setSelectButton("All")}
-          >
-            Mostrar todo
-          </button>
+    <section className="info-mars">
+      {showspinner === false ? (
+        <Spinner />
+      ) : infoMars.length === 0 ? (
+        <div className="container-spinner">
+          <Spinner />
+          <h5>
+            I apologize for the inconvenience. It appears that the information
+            was not updated as expected. Please try again with a different date.
+            🫠
+          </h5>
         </div>
-      </section>
-    </>
+      ) : (
+        <DetailMarsRover
+          infoMars={infoMars}
+          selectButton={selectButton}
+          setSelectButton={setSelectButton}
+          buttonCamera={buttonCamera}
+          date={date}
+          dateRover={dateRover}
+        />
+      )}
+    </section>
   );
 };
 

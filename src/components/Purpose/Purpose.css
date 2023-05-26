@@ -1,21 +1,20 @@
 .container-home {
-    background-color: var(--color-fourth);
-    width: 90%;
-    height: 90%;
-    padding: 2rem;
-    border-radius: 20px;
-    opacity: 0.95;
+  background-color: var(--color-fourth);
+  width: 90%;
+  height: 35rem;
+  padding: 2rem;
+  border-radius: 20px;
+  opacity: 0.95;
 }
 
-
 @media screen and (max-width: 1170px) {
-    .container-home {
-        height: 80vh;
-    }
+  .container-home {
+    height: 80vh;
+  }
 }
 
 @media screen and (max-width: 450px) {
-    .container-home {
-        height: 100%
-    }
+  .container-home {
+    height: 100%;
+  }
 }

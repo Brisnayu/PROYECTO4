@@ -15,11 +15,23 @@ const Home = () => {
       ) : (
         <div className="container">
           <input
-            placeholder="Introduce tu nombre"
+            title="You can input a maximum of 6 letters"
+            maxLength="6"
+            placeholder="Please enter your name..."
             type="text"
             onInput={(event) => setInputValue(event.target.value)}
           />
-          <button onClick={() => setUser(inputValue)}>🛰️ Iniciar 👨🏼‍🚀</button>
+          <button
+            onClick={() => {
+              if (inputValue === "") {
+                alert("Please enter your name to begin");
+              } else {
+                setUser(inputValue);
+              }
+            }}
+          >
+            🛰️ Start 👨🏼‍🚀
+          </button>
         </div>
       )}
     </main>

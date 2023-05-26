@@ -7,11 +7,10 @@ import SelectApi from "../../components/SelectApi/SelectApi";
 import APOD from "../../components/APOD/APOD";
 import MarsRover from "../../components/MarsRover/MarsRover";
 
-import { dateMars, yesterday } from "../../textData/DateFetchApi";
-import { NASA_URL, NASA_API_KEY } from "../../textData/NasaData";
+import { today, dateMars, yesterday } from "../../infoExtra/DateFetchApi";
+import { NASA_URL, NASA_API_KEY } from "../../infoExtra/NasaData";
 
 const Content = () => {
-  const today = new Date(Date.now()).toISOString().slice(0, 10);
   dateMars();
 
   const [date, setDate] = useState(today);
@@ -22,6 +21,8 @@ const Content = () => {
 
   const [selectButton, setSelectButton] = useState("All");
 
+  const [showspinner, setShowspinner] = useState(false);
+
   const APOD_URL = `${NASA_URL}planetary/apod?date=${date}&api_key=${NASA_API_KEY}`;
   const MARS_URL = `${NASA_URL}mars-photos/api/v1/rovers/curiosity/photos?api_key=${NASA_API_KEY}&earth_date=${date}`;
 
@@ -31,8 +32,6 @@ const Content = () => {
         .then((res) => res.json())
         .then((res) => {
           setInfoDay(res);
-          // console.log(res);
-          // console.log("el dia es", date);
         })
         .catch((error) => {
           alert("NO HAY INFORMACIÓN DE ESE DÍA");
@@ -41,8 +40,8 @@ const Content = () => {
       fetch(MARS_URL)
         .then((res) => res.json())
         .then((res) => {
-          console.log("aquí estoy dentro del fetch", res.photos);
           setInfoMars(res.photos);
+          setShowspinner(true);
         })
         .catch((error) => {
           alert("NO HAY INFORMACIÓN DE ESE DÍA");
@@ -76,6 +75,7 @@ const Content = () => {
             selectButton={selectButton}
             setSelectButton={setSelectButton}
             date={date}
+            showspinner={showspinner}
           />
         )}
       </article>

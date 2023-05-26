@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UserContextProvider } from "./context/userContext.jsx";
 
 import "./index.css";
+import RouteInit from "./components/RouteInit/RouteInit.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -16,8 +17,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<Home />} />
-            <Route path="/Content" element={<Content />} />
-            <Route patch="*" element={<NotFound />} />
+            <Route
+              path="/Content"
+              element={
+                <RouteInit>
+                  <Content />
+                </RouteInit>
+              }
+            />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -4,7 +4,7 @@ const ChangeDate = ({ date, today, setDate, setSelectButton }) => {
   return (
     <div className="input-nasa-date">
       <label htmlFor="date-api">
-        <h3>Consulta otra fecha</h3>
+        <h3>Please indicate the date:</h3>
       </label>
       <input
         type="date"

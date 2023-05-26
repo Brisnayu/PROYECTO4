@@ -13,13 +13,20 @@ const Header = () => {
     <header>
       <img className="logo" src={logoNasa} alt="logo-nasa" />
 
-      {user !== null && <h1>Bienvenido {user}</h1>}
+      {user !== null && <h1>Welcome {user.charAt(0).toUpperCase() + user.slice(1)}</h1>}
 
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/Content">IADD</NavLink>
+            <NavLink
+              to="/"
+              onClick={() =>
+                user === null && alert("Please enter your name to begin")
+              }
+            >
+              Home
+            </NavLink>
+            {user !== null && <NavLink to="/Content">AID</NavLink>}
           </li>
           {user !== null && (
             <li>
@@ -29,7 +36,7 @@ const Header = () => {
                   navigate("/");
                 }}
               >
-                Reiniciar
+                Finish
               </button>
             </li>
           )}

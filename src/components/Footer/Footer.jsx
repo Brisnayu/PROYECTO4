@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer>
       <div>
-        <p>Creado por Brisna Páez para Rock The Code</p>
+        <p>Created with love 💕 by Brisna Páez for Rock The Code.</p>
       </div>
 
       <div className="icon-rrss">

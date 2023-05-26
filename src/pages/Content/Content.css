@@ -1,7 +1,7 @@
 .container-info {
   background-color: var(--color-fourth);
   width: 90%;
-  height: 90%;
+  height: 35rem;
   padding: 2rem;
   border-radius: 20px;
   opacity: 0.95;
@@ -16,7 +16,7 @@
   gap: 1rem;
 }
 
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1226px) {
   .container-info {
     height: auto;
   }

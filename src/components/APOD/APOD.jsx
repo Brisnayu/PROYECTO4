@@ -10,7 +10,7 @@ const APOD = ({ date, infoDay }) => {
     <>
       <section className="info-nasa">
         <div className="text-nasa">
-          <h2>Esta imagen corresponde con la fecha {changeFormat()}</h2>
+          <h2>This image corresponds to the date {changeFormat()}</h2>
           <br />
           <h3>{infoDay.title}</h3>
           <p>{infoDay.explanation}</p>
@@ -21,7 +21,7 @@ const APOD = ({ date, infoDay }) => {
         </div>
 
         <div className="img-nasa">
-          <h3>Imagen Astronómica del día</h3>
+          <h3>Astronomical Image of the Day</h3>
           <img src={infoDay.hdurl} alt={infoDay.title} loading="lazy"/>
         </div>
       </section>
