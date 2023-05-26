@@ -1,18 +1,18 @@
 .container-not-found {
-    background-color: var(--color-fourth);
-    width: 90%;
-    height: 90%;
-    padding: 2rem;
-    border-radius: 20px;
-    opacity: 0.95;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--color-fourth);
+  width: 90%;
+  height: 90%;
+  padding: 2rem;
+  border-radius: 20px;
+  opacity: 0.95;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .not-found {
-    width: 40%;
-    height: 80%;
-    border-radius: 20%;
+  width: 40%;
+  height: 80%;
+  border-radius: 20%;
 }
