@@ -14,19 +14,19 @@ const Footer = () => {
 
       <div className="icon-rrss">
         <a href="https://github.com/Brisnayu" target="_blank">
-          <img src={logoLinkedin} alt="icon-linkedin" />
+          <img src={logoGithub} alt="icon-linkedin" />
         </a>
         <a
           href="https://www.linkedin.com/in/brisna-a-paez-m-283934154"
           target="_blank"
         >
-          <img src={logoGithub} alt="icon-github" />
+          <img src={logoLinkedin} alt="icon-github" />
         </a>
-        <a href="https://www.instagram.com/mini_hera_/" target="_blank">
-          <img src={logoEmail} alt="icon-email" />
+        <a href="https://www.instagram.com/brisna_ayu/" target="_blank">
+          <img src={logoInstagram} alt="icon-email" />
         </a>
         <a href="mailto:brisnapaez25@gmail.com" target="_blank">
-          <img src={logoInstagram} alt="icon-instagram" />
+          <img src={logoEmail} alt="icon-instagram" />
         </a>
       </div>
     </footer>
