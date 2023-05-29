@@ -3,7 +3,6 @@ import { textData } from "../../infoExtra/TextData";
 import { v4 as uuidv4 } from "uuid";
 
 const Purpose = () => {
-  uuidv4();
 
   return (
     <div className="container-home">

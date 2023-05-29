@@ -3,7 +3,6 @@ import "./ImagesMars.css";
 import { v4 as uuidv4 } from "uuid";
 
 const ImagesMars = ({ selectButton, infoMars }) => {
-  uuidv4();
 
   return (
     <div className="img-mars">

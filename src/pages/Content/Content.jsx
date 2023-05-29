@@ -58,6 +58,8 @@ const Content = () => {
               today={today}
               setDate={setDate}
               setSelectButton={setSelectButton}
+              yesterday={yesterday}
+              selectApi={selectApi}
             />
             <SelectApi
               setSelectApi={setSelectApi}

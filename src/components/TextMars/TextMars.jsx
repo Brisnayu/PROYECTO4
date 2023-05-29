@@ -2,7 +2,6 @@ import "./TextMars.css";
 import { v4 as uuidv4 } from "uuid";
 
 const TextMars = ({ date, infoMars, dateRover }) => {
-uuidv4();
 
   return (
     <div>

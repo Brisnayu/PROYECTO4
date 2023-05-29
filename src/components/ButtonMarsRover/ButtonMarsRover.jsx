@@ -2,7 +2,6 @@ import "./ButtonMarsRover.css";
 import { v4 as uuidv4 } from "uuid";
 
 const ButtonMarsRover = ({ infoMars, setSelectButton, buttonCamera }) => {
-    uuidv4();
     
     return (
         <div className="container-button">

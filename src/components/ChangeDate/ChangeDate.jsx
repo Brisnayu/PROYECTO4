@@ -1,6 +1,6 @@
 import "./ChangeDate.css";
 
-const ChangeDate = ({ date, today, setDate, setSelectButton }) => {
+const ChangeDate = ({ date, today, yesterday, setDate, setSelectButton, selectApi }) => {
   return (
     <div className="input-nasa-date">
       <label htmlFor="date-api">
@@ -9,7 +9,7 @@ const ChangeDate = ({ date, today, setDate, setSelectButton }) => {
       <input
         type="date"
         value={date}
-        max={today}
+        max={selectApi === "API-APOD" ? today : yesterday}
         min="2020-01-01"
         onInput={(event) => {
           setDate(event.target.value.toLocaleString()), setSelectButton("All");

@@ -4,7 +4,7 @@ export let yesterday;
 
 export const dateMars = () => {
   let todayEarth = new Date();
-  let day = todayEarth.getDate() - 1;
+  let day = todayEarth.getDate() - 2;
   let month = todayEarth.getMonth() + 1;
   let year = todayEarth.getFullYear();
 
