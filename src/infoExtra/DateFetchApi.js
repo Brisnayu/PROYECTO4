@@ -9,8 +9,16 @@ export const dateMars = () => {
   let year = todayEarth.getFullYear();
 
   if (month < 10) {
-    return (yesterday = `${year}-0${month}-${day}`);
+    if (day < 10) {
+      return (yesterday = `${year}-0${month}-0${day}`);
+    } else {
+      return (yesterday = `${year}-0${month}-${day}`);
+    }
   } else {
-    return (yesterday = `${year}-${month}-${day}`);
+    if (day < 10) {
+      return (yesterday = `${year}-${month}-0${day}`);
+    } else {
+      return (yesterday = `${year}-${month}-${day}`);
+    }
   }
 };
