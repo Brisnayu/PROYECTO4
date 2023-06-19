@@ -23,7 +23,7 @@ const Content = () => {
 
   const [showspinner, setShowspinner] = useState(false);
 
-  const NASA_API_KEY = import.meta.env.VITE_APP_NASA_API_KEY;
+  const NASA_API_KEY = import.meta.env.VITE_API_NASA_API_KEY;
   const APOD_URL = `${NASA_URL}planetary/apod?date=${date}&api_key=${NASA_API_KEY}`;
   const MARS_URL = `${NASA_URL}mars-photos/api/v1/rovers/curiosity/photos?api_key=${NASA_API_KEY}&earth_date=${date}`;
 
