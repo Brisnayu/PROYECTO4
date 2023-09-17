@@ -26,7 +26,7 @@ const Header = () => {
             >
               Home
             </NavLink>
-            {user !== null && <NavLink to="/Content">AID</NavLink>}
+            {user !== null && <NavLink to="/Content"><span translate="no">AID</span></NavLink>}
           </li>
           {user !== null && (
             <li>
